@@ -45,8 +45,13 @@ public class YouTubePlayerController implements
 
             // Update config
             mYouTubePlayer.setShowFullscreenButton(fullscreen);
+                
+                int fullScreenFlags = mYouTubePlayer.getFullscreenControlFlags();
+        fullScreenFlags &= YouTubePlayer.FULLSCREEN_FLAG_CONTROL_ORIENTATION;
+                fullScreenFlags &= YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
+                        mYouTubePlayer.setFullscreenControlFlags(fullScreenFlags);
 
-            // Emit 'onReady' event for player
+                // Emit 'onReady' event for player
             mYouTubeView.playerViewDidBecomeReady();
             setLoaded(true);
 
