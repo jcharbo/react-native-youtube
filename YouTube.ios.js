@@ -5,15 +5,15 @@
 
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
-import ReactNative, {
-  View,
-  StyleSheet,
-  requireNativeComponent,
-  NativeModules,
-  NativeMethodsMixin,
-  NativeAppEventEmitter
-} from 'react-native';
+import React, { Component } from 'react';
+ import PropTypes from 'prop-types';
+ import ReactNative, { 
+   View, 
+   requireNativeComponent, 
+   NativeModules, 
+   ViewPropTypes 
+ } from 'react-native';
+
 
 const RCTYouTube = requireNativeComponent('RCTYouTube', null);
 
@@ -41,6 +41,7 @@ export default class YouTube extends Component {
     onChangeState: PropTypes.func,
     onChangeQuality: PropTypes.func,
     onError: PropTypes.func,
+    style: (ViewPropTypes && ViewPropTypes.style) || View.propTypes.style,
     loop: PropTypes.bool,
     fs: PropTypes.bool,
     onFullScreenEnter: PropTypes.func,
