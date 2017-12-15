@@ -21,6 +21,15 @@
     "url": "https://github.com/paramaggarwal/react-native-youtube/issues"
   },
   "homepage": "https://github.com/paramaggarwal/react-native-youtube#readme",
+  "peerDependencies": {
+      "react": ">=15.3.2",		  
+   "react-native": ">=0.37",
+     "prop-types": "^15.5.10"
+    },		    
+   "assets": [
+       "assets"
+     ]
+   },
   "rnpm": {
     "android": {
       "packageInstance": "new ReactNativeYouTube()"
