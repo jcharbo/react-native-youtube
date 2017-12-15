@@ -5,9 +5,11 @@
 
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+ import PropTypes from 'prop-types';
 import {
   View,
+  ViewPropTypes,
   StyleSheet,
   requireNativeComponent,
   NativeModules,
@@ -15,7 +17,7 @@ import {
 } from 'react-native';
 
 export default class YouTube extends Component {
-  static propTypes = {
+   static propTypes = {
     style: View.propTypes.style,
     videoId: PropTypes.string.isRequired,
     apiKey: PropTypes.string.isRequired,
@@ -31,6 +33,7 @@ export default class YouTube extends Component {
     onReady: PropTypes.func,
     onChangeState: PropTypes.func,
     onChangeQuality: PropTypes.func,
+     style: (ViewPropTypes && ViewPropTypes.style) || View.propTypes.style,
     onError: PropTypes.func,
     // TODO: Make this work on android, the native player doesn't support it right now...
     onProgress: PropTypes.func,
